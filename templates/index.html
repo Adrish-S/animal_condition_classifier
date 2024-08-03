@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FDS DA</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .window {
+            flex: 1; /* Take up equal space */
+            border: 1px solid #ccc;
+            overflow: auto; /* Make the div scrollable */
+            margin-right: 10px; /* Add some spacing between the divs */
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45A049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Condition Detection</h1>
+    <div class="container">
+        <div class="window">
+            <div class="content">
+                <ol>
+                    <li>Dog</li>
+                    <li>Cat</li>
+                    <li>Rabbit</li>
+                    <li>Cow</li>
+                    <li>Chicken</li>
+                    <li>Cattle</li>
+                    <li>Mammal</li>
+                    <li>Horse</li>
+                    <li>Turtle</li>
+                    <li>Hamster</li>
+                    <li>Lion</li>
+                    <li>Fox</li>
+                    <li>Fox</li>
+                    <li>Goat</li>
+                    <li>Deer</li>
+                    <li>Monkey</li>
+                    <li>Birds</li>
+                    <li>Sheep</li>
+                    <li>Pigs</li>
+                    <li>Fowl</li>
+                    <li>Duck</li>
+                    <li>Other birds</li>
+                    <li>Snake</li>
+                    <li>Donkey</li>
+                    <li>Mules</li>
+                    <li>Elephant</li>
+                    <li>Elk</li>
+                    <li>Wapiti</li>
+                    <li>Mule deer</li>
+                    <li>Black-tailed deer</li>
+                    <li>Sika deer</li>
+                    <li>White-tailed deer</li>
+                    <li>Reindeer</li>
+                    <li>Moos</li>
+                    <li>Tiger</li>
+                    <li>Goats</li>
+                    <li>Buffaloes</li>
+                    <li>Dogs</li>
+                    <li>Wolves</li>
+                    <li>Hyaenas</li>
+                    <li>Pig</li>
+                </ol>            
+            </div>
+        </div>
+        <!-- <div class="window">
+            <div class="content">
+                <ol>
+                    <li>Fever</li>
+                    <li>Ulcers</li>
+                    <li>Facial Swelling</li>
+                    <li>Swelling on leg</li>
+                    <li>Short term lethargy</li>
+                    <li>Swollen lymph nodes</li>
+                    <li>Diarrhea with mucus</li>
+                    <li>Strong cough</li>
+                    <li>Lesions in the nasal cavity</li>
+                    <li>Hair loss</li>
+                    <li>Greenish-yellow nasal discharge</li>
+                    <li>Jaundice</li>
+                    <li>Poor coat appearance</li>
+                    <li>Watering</li>
+                    <li>Straining</li>
+                    <li>Upset stomach</li>
+                    <li>Allergic Reaction</li>
+                    <li>Limping</li>
+                    <li>Pneumonia</li>
+                    <li>Bloody Urine</li>
+                    <li>Loss of eat (assuming you meant "Loss of appetite")</li>
+                    <li>Dark or black face</li>
+                    <li>Appetite varies</li>
+                    <li>Sickness</li>
+                    <li>Nasal Bleeding</li>
+                    <li>Gas</li>
+                    <li>Shaking head</li>
+                    <li>Attacks</li>
+                    <li>Blood stool</li>
+                    <li>Nasal discharge</li>
+                    <li>Polyuria</li>
+                    <li>Excessive Urination</li>
+                    <li>Convulsion</li>
+                    <li>Wheezing</li>
+                    <li>Lesion on cat skin</li>
+                    <li>Lethargy</li>
+                    <li>Skin irritation</li>
+                    <li>Floppy muscle</li>
+                    <li>Sensitivity to bright light</li>
+                    <li>Tenderness</li>
+                    <li>Scaly patches of skin</li>
+                    <li>Fatty stool</li>
+                    <li>Nausea</li>
+                    <li>Most often none</li>
+                    <li>Discomfort</li>
+                    <li>Loss of appetite</li>
+                    <li>Rhinitis</li>
+                    <li>Immediate death</li>
+                    <li>Red on affected area</li>
+                    <li>Watering Diarrhea</li>
+                    <li>Loss in weight</li>
+                    <li>Loss of appetite</li>
+                    <li>Egg production decreases</li>
+                    <li>Abortion at the end of gestation</li>
+                    <li>Swollen</li>
+                    <li>Fluid Faeces on blood and muscle</li>
+                    <li>Severe</li>
+                    <li>Normal appetite</li>
+                    <li>Inability to stand</li>
+                    <li>Excitability</li>
+                    <li>Animal gets uneasy</li>
+                    <li>Sudden death</li>
+                    <li>Small red bumps</li>
+                    <li>Ring-shaped Lesion</li>
+                    <li>Bubbles in the mouth</li>
+                    <li>Changes in the outer layer of skin</li>
+                    <li>Red Tinge</li>
+                    <li>Passing of undigested food</li>
+                    <li>Smell</li>
+                    <li>Loss of activity</li>
+                    <li>Bald patches</li>
+                    <li>Poor condition</li>
+                    <li>Heavy infection</li>
+                    <li>Thickened skin</li>
+                    <li>Facial edema</li>
+                    <li>General malaise</li>
+                    <li>Edema</li>
+                    <li>Poor growth</li>
+                    <li>Dullness</li>
+                    <li>Vomiting</li>
+                    <li>Weakness</li>
+                    <li>Partial Paralysis</li>
+                    <li>Thick Crusting</li>
+                    <li>Constant pacing</li>
+                    <li>Loss of appetite</li>
+                    <li>Indigestion</li>
+                    <li>Blood in urine</li>
+                    <li>Sores on lip</li>
+                    <li>Abortion on late pregnancy</li>
+                    <li>Paresis</li>
+                    <li>Abortion</li>
+                    <li>Runny nose</li>
+                    <li>Decreased milk</li>
+                    <li>Swelling of udder</li>
+                    <li>Emaciation</li>
+                    <li>Skin Allergy</li>
+                    <li>Watering of eyes</li>
+                    <li>Beriberi</li>
+                    <li>Gastritis</li>
+                    <li>Gas</li>
+                    <li>Drooping ears</li>
+                    <li>Edema</li>
+                    <li>Drooping wings</li>
+                    <li>Neck paralysis</li>
+                    <li>Dejection</li>
+                    <li>Severe swelling</li>
+                    <li>Sneezing</li>
+                    <li>Shallow breathing</li>
+                    <li>Dyspnea</li>
+                    <li>Mortality</li>
+                    <li>Skin rashes</li>
+                    <li>Air sacculitis</li>
+                    <li>Labored breathing</li>
+                    <li>Blood from mouth</li>
+                    <li>Hemoptysis</li>
+                    <li>Restlessness</li>
+                    <li>Stripped remiges</li>
+                    <li>Apathy</li>
+                    <li>Hepatomegaly</li>
+                    <li>Balance problem</li>
+                    <li>Legness</li>
+                    <li>Difficulty in feeding</li>
+                    <li>Frothy eye</li>
+                    <li>Inappetence</li>
+                    <li>Lack of walking</li>
+                    <li>Scabs on feet</li>
+                    <li>Enlarged thymus</li>
+                    <li>Fluffed feather</li>
+                    <li>Heavy breathing</li>
+                    <li>Puffed-up feather</li>
+                    <li>Tail wagging</li>
+                    <li>Overweight</li>
+                    <li>Skin infection</li>
+                    <li>Discharge from eyes</li>
+                    <li>Pale comb</li>
+                    <li>Liquid dropping</li>
+                    <li>Undigested in their feces</li>
+                    <li>Sharp feather</li>
+                    <li>Ruffled appearance</li>
+                    <li>Sinuses</li>
+                    <li>Feather loss</li>
+                    <li>Watery eyes</li>
+                    <li>Bony lesion</li>
+                    <li>Tremor of head and neck</li>
+                    <li>Swollen belly</li>
+                    <li>Signs in rams</li>
+                    <li>Spines</li>
+                    <li>Discharge</li>
+                    <li>Excess salivation</li>
+                    <li>Teeth grinding</li>
+                    <li>Swelling</li>
+                    <li>Head tilt</li>
+                    <li>Decreased growth of bone</li>
+                    <li>Swollen left abdomen</li>
+                    <li>Cessation of eructation</li>
+                    <li>Barren ewes</li>
+                    <li>Tremor</li>
+                    <li>Ill thrift</li>
+                    <li>Hemorrhage</li>
+                    <li>Bloody diarrhea</li>
+                    <li>Reluctant move</li>
+                    <li>Poor wool</li>
+                    <li>Poor immune function</li>
+                    <li>Abdominal pain</li>
+                    <li>Fetopelvic disproportion</li>
+                    <li>Watery diarrhea disproportion</li>
+                    <li>Severe keratitis</li>
+                    <li>Swollen</li>
+                    <li>Foul smelling</li>
+                    <li>Sheep often bites</li>
+                    <li>Pyrexia</li>
+                    <li>Red skin</li>
+                    <li>Grossly enlarged</li>
+                    <li>Hyperexcitability</li>
+                    <li>Decreased eyelid</li>
+                    <li>Inability to digest</li>
+                    <li>Respiratory distress</li>
+                    <li>Unsteady gait</li>
+                    <li>Smell of ammonia</li>
+                    <li>Wandering</li>
+                    <li>Tremors</li>
+                    <li>Wool is clumped</li>
+                    <li>Swaying</li>
+                    <li>Cell damage</li>
+                    <li>Formation of vesicles</li>
+                    <li>Skeletal abnormalities</li>
+                    <li>Wether restless</li>
+                    <li>Listless</li>
+                    <li>Thick skin</li>
+                    <li>Dizziness</li>
+                    <li>Tear production</li>
+                    <li>Skin color change</li>
+                    <li>Rapid onset</li>
+                    <li>Head shaking</li>
+                    <li>Inflammation</li>
+                    <li>Isolation from flock</li>
+                    <li>Bluish white opacity</li>
+                    <li>Head tossing</li>
+                    <li>Coughing</li>
+                    <li>Cough</li>
+                </ol>
+            </div> -->
+        </div>
+    </div>
+    <form method="POST" action="/predict">
+        <label for="animal">Animal:</label>
+        <input type="number" id="animal" name="animal" required><br><br>
+
+        <label for="cond1">Condition 1:</label>
+        <input type="number" id="cond1" name="cond1" required><br><br>
+
+        <label for="cond2">Condition 2:</label>
+        <input type="number" id="cond2" name="cond2" required><br><br>
+
+        <label for="cond3">Condition 3:</label>
+        <input type="number" id="cond3" name="cond3" required><br><br>
+
+        <label for="cond4">Condition 4:</label>
+        <input type="number" id="cond4" name="cond4" required><br><br>
+
+        <label for="cond5">Condition 5:</label>
+        <input type="number" id="cond5" name="cond5" required><br><br>
+
+        <button type="submit">Predict Dangerous or Non-Dangerous</button>
+    </form>
+
+
+</body>
+
+</html>
